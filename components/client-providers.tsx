@@ -1,0 +1,22 @@
+// components/client-providers.tsx - Client Component
+'use client';
+
+import { ThemeProvider } from "next-themes";
+import { Toaster } from "@/components/ui/sonner";
+
+export function ClientProviders({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <ThemeProvider
+      attribute="class"
+      defaultTheme="light"
+      disableTransitionOnChange
+    >
+      {children}
+      <Toaster />
+    </ThemeProvider>
+  );
+}
